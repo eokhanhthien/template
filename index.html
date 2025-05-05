@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100+ HTML/CSS Templates Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #16a085;
+            --background-color: #f5f7fa;
+            --card-bg: #ffffff;
+            --text-color: #333;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=1770&auto=format&fit=crop') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: slideUp 1s ease-in-out;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            animation: fadeIn 1.4s ease-in-out;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 15px 20px;
+            border-radius: 10px;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .search-container {
+            margin: 30px 0;
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+            position: relative;
+            max-width: 600px;
+            margin: 30px auto;
+        }
+
+        .search-container input {
+            padding: 15px 25px;
+            width: 100%;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            box-shadow: var(--box-shadow);
+            padding-left: 50px;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 30px 0;
+            animation: fadeIn 1.4s ease-in-out;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background-color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            box-shadow: var(--box-shadow);
+            font-size: 0.9rem;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            animation: fadeIn 1.6s ease-in-out;
+        }
+
+        .template-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .template-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .template-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .template-card:hover .template-image img {
+            transform: scale(1.05);
+        }
+
+        .template-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .template-card:hover .template-overlay {
+            opacity: 1;
+        }
+
+        .preview-btn {
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .preview-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .template-details {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .template-name {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .template-category {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: rgba(52, 152, 219, 0.1);
+            border-radius: 15px;
+        }
+
+        .template-actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: auto;
+        }
+
+        .demo-btn, .download-btn {
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .demo-btn {
+            background-color: var(--primary-color);
+            color: white;
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .demo-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .download-btn {
+            background-color: #f0f0f0;
+            color: var(--text-color);
+            flex: 1;
+        }
+
+        .download-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 10px;
+        }
+
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--box-shadow);
+            font-weight: 500;
+        }
+
+        .pagination-btn:hover,
+        .pagination-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .loading i {
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2rem;
+            color: #777;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 70px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .templates-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+            }
+
+            .stat-item {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>100+ Beautiful HTML/CSS Templates</h1>
+            <p class="subtitle">Explore a collection of ready-to-use templates for your next web project</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Templates</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Free</div>
+                    <div class="stat-label">To Use</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search templates..." onkeyup="filterTemplates()">
+        </div>
+
+        <div class="filters">
+            <button class="filter-btn active" data-category="all">All Templates</button>
+            <button class="filter-btn" data-category="business">Business</button>
+            <button class="filter-btn" data-category="portfolio">Portfolio</button>
+            <button class="filter-btn" data-category="landing">Landing Pages</button>
+            <button class="filter-btn" data-category="restaurant">Restaurant</button>
+            <button class="filter-btn" data-category="e-commerce">E-Commerce</button>
+        </div>
+
+        <div id="templatesGrid" class="templates-grid">
+            <div class="loading">
+                <i class="fas fa-spinner"></i> Loading templates...
+            </div>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 HTML/CSS Templates Collection - Curated by eokhanhthien</p>
+        <p>All templates are free to use for personal and commercial projects</p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Template data
+        const allTemplates = [
+        {
+            id: 1,
+            name: "Foodee",
+            folder: "01-foodee",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Foodee+Template"
+        },
+        {
+            id: 2,
+            name: "Tasty",
+            folder: "02-tasty",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Tasty+Template"
+        },
+        {
+            id: 3,
+            name: "Ethereal",
+            folder: "03-ethereal",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Ethereal+Template"
+        },
+        {
+            id: 4,
+            name: "Karmo",
+            folder: "04-karmo",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Karmo+Template"
+        },
+        {
+            id: 5,
+            name: "Bodo",
+            folder: "05-bodo",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Bodo+Template"
+        },
+        {
+            id: 6,
+            name: "Portfolio Master",
+            folder: "06-portfolio-master",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Portfolio+Master"
+        },
+        {
+            id: 7,
+            name: "Snow Master",
+            folder: "07-snow-master",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Snow+Master"
+        },
+        {
+            id: 8,
+            name: "Synthetica",
+            folder: "08-synthetica",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Synthetica"
+        },
+        {
+            id: 9,
+            name: "Sprout Master",
+            folder: "09-sprout-master",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Sprout+Master"
+        },
+        {
+            id: 10,
+            name: "Bicycling Master",
+            folder: "10-bicycling-master",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Bicycling+Master"
+        },
+        {
+            id: 11,
+            name: "Cooking School",
+            folder: "100-cookingschool",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Cooking+School"
+        },
+        {
+            id: 12,
+            name: "Megakit Master",
+            folder: "11-megakit-master",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Megakit"
+        },
+        {
+            id: 13,
+            name: "Garage",
+            folder: "12-garage",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Garage"
+        },
+        {
+            id: 14,
+            name: "Knight",
+            folder: "13-knight",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Knight"
+        },
+        {
+            id: 15,
+            name: "New Age",
+            folder: "14-new-age",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=New+Age"
+        },
+        {
+            id: 16,
+            name: "Treviso",
+            folder: "15-treviso",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Treviso"
+        },
+        {
+            id: 17,
+            name: "Story",
+            folder: "16-story",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Story"
+        },
+        {
+            id: 18,
+            name: "Cardio",
+            folder: "17-cardio",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Cardio"
+        },
+        {
+            id: 19,
+            name: "Infinity",
+            folder: "18-infinity",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Infinity"
+        },
+        {
+            id: 20,
+            name: "Made One",
+            folder: "19-made-one",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Made+One"
+        },
+        {
+            id: 21,
+            name: "Made Two",
+            folder: "20-made-two",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Made+Two"
+        },
+        {
+            id: 22,
+            name: "Weather",
+            folder: "21-weather",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Weather"
+        },
+        {
+            id: 23,
+            name: "John Doe",
+            folder: "22-john-doe",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=John+Doe"
+        },
+        {
+            id: 24,
+            name: "Rage",
+            folder: "23-rage",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Rage"
+        },
+        {
+            id: 25,
+            name: "Solid State",
+            folder: "24-solid-state",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Solid+State"
+        },
+        {
+            id: 26,
+            name: "Invention",
+            folder: "25-invention",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Invention"
+        },
+        {
+            id: 27,
+            name: "Exigo",
+            folder: "26-exigo",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Exigo"
+        },
+        {
+            id: 28,
+            name: "Logic",
+            folder: "27-logic",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Logic"
+        },
+        {
+            id: 29,
+            name: "Clemo",
+            folder: "28-clemo",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Clemo"
+        },
+        {
+            id: 30,
+            name: "Bino",
+            folder: "29-bino",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Bino"
+        },
+        {
+            id: 31,
+            name: "Hats",
+            folder: "30-hats",
+            category: "e-commerce",
+            image: "https://via.placeholder.com/300x200?text=Hats"
+        },
+        {
+            id: 32,
+            name: "Vira",
+            folder: "31-vira",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Vira"
+        },
+        {
+            id: 33,
+            name: "Landing Zero",
+            folder: "32-landing-zero",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Landing+Zero"
+        },
+        {
+            id: 34,
+            name: "AirCV",
+            folder: "33-aircv",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=AirCV"
+        },
+        {
+            id: 35,
+            name: "Wow",
+            folder: "34-wow",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Wow"
+        },
+        {
+            id: 36,
+            name: "Volcan",
+            folder: "35-volcan",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Volcan"
+        },
+        {
+            id: 37,
+            name: "Rabbit",
+            folder: "36-rabbit",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Rabbit"
+        },
+        {
+            id: 38,
+            name: "LazyFox",
+            folder: "37-lazyfox",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=LazyFox"
+        },
+        {
+            id: 39,
+            name: "Conference",
+            folder: "38-conference",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Conference"
+        },
+        {
+            id: 40,
+            name: "Sight",
+            folder: "39-sight",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Sight"
+        },
+        {
+            id: 41,
+            name: "Metronic Shop UI",
+            folder: "40-metronic-shop-ui",
+            category: "e-commerce",
+            image: "https://via.placeholder.com/300x200?text=Metronic+Shop+UI"
+        },
+        {
+            id: 42,
+            name: "Metronic One Page",
+            folder: "41-metronic-one-page",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Metronic+One+Page"
+        },
+        {
+            id: 43,
+            name: "Navigator Onepage",
+            folder: "42-navigator-onepage",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Navigator+Onepage"
+        },
+        {
+            id: 44,
+            name: "Metronic One Page",
+            folder: "43-metronic-one-page",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Metronic+One+Page"
+        },
+        {
+            id: 45,
+            name: "Fame",
+            folder: "44-fame",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Fame"
+        },
+        {
+            id: 46,
+            name: "Themelight",
+            folder: "45-themelight",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Themelight"
+        },
+        {
+            id: 47,
+            name: "Plantilla",
+            folder: "46-plantilla",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Plantilla"
+        },
+        {
+            id: 48,
+            name: "Avana",
+            folder: "47-avana",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Avana"
+        },
+        {
+            id: 49,
+            name: "Metronic Frontend",
+            folder: "48-metronic-frontend",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Metronic+Frontend"
+        },
+        {
+            id: 50,
+            name: "Asentus",
+            folder: "49-asentus",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Asentus"
+        },
+        {
+            id: 51,
+            name: "Airspace",
+            folder: "50-airspace",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Airspace"
+        },
+        {
+            id: 52,
+            name: "Acidus",
+            folder: "51-acidus",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Acidus"
+        },
+        {
+            id: 53,
+            name: "Applayers",
+            folder: "52-applayers",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Applayers"
+        },
+        {
+            id: 54,
+            name: "Bizexpress",
+            folder: "53-bizexpress",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Bizexpress"
+        },
+        {
+            id: 55,
+            name: "Bizium",
+            folder: "54-bizium",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Bizium"
+        },
+        {
+            id: 56,
+            name: "Robot Factory",
+            folder: "55-robot-factory",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Robot+Factory"
+        },
+        {
+            id: 57,
+            name: "Ghughu",
+            folder: "56-ghughu",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Ghughu"
+        },
+        {
+            id: 58,
+            name: "Texas Lawyer",
+            folder: "57-texas-lawyer",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Texas+Lawyer"
+        },
+        {
+            id: 59,
+            name: "Lifetrackr",
+            folder: "58-lifetrackr",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Lifetrackr"
+        },
+        {
+            id: 60,
+            name: "Euro Travels",
+            folder: "59-euro-travels",
+            category: "travel",
+            image: "https://via.placeholder.com/300x200?text=Euro+Travels"
+        },
+        {
+            id: 61,
+            name: "Meatking",
+            folder: "60-meatking",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Meatking"
+        },
+        {
+            id: 62,
+            name: "Mamma's Kitchen",
+            folder: "61-mamma-s-kitchen",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Mammas+Kitchen"
+        },
+        {
+            id: 63,
+            name: "Twenty",
+            folder: "62-twenty",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Twenty"
+        },
+        {
+            id: 64,
+            name: "Spectral",
+            folder: "63-spectral",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Spectral"
+        },
+        {
+            id: 65,
+            name: "Gentelella",
+            folder: "64-gentelella",
+            category: "admin",
+            image: "https://via.placeholder.com/300x200?text=Gentelella"
+        },
+        {
+            id: 66,
+            name: "Boxer",
+            folder: "65-boxer",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Boxer"
+        },
+        {
+            id: 67,
+            name: "White Pro",
+            folder: "66-white-pro",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=White+Pro"
+        },
+        {
+            id: 68,
+            name: "Awesome",
+            folder: "67-awesome",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Awesome"
+        },
+        {
+            id: 69,
+            name: "JohnDoe",
+            folder: "68-johndoe",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=JohnDoe"
+        },
+        {
+            id: 70,
+            name: "Lucy",
+            folder: "69-lucy",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Lucy"
+        },
+        {
+            id: 71,
+            name: "Brandi",
+            folder: "70-brandi",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Brandi"
+        },
+        {
+            id: 72,
+            name: "Meghna",
+            folder: "71-meghna",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Meghna"
+        },
+        {
+            id: 73,
+            name: "Navada Plus",
+            folder: "72-navada-plus",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Navada+Plus"
+        },
+        {
+            id: 74,
+            name: "Rain",
+            folder: "73-rain",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Rain"
+        },
+        {
+            id: 75,
+            name: "Sports Coach",
+            folder: "74-sports-coach",
+            category: "sports",
+            image: "https://via.placeholder.com/300x200?text=Sports+Coach"
+        },
+        {
+            id: 76,
+            name: "Agency",
+            folder: "75-agency",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Agency"
+        },
+        {
+            id: 77,
+            name: "Humanity",
+            folder: "76-humanity",
+            category: "nonprofit",
+            image: "https://via.placeholder.com/300x200?text=Humanity"
+        },
+        {
+            id: 78,
+            name: "Imminent",
+            folder: "77-imminent",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Imminent"
+        },
+        {
+            id: 79,
+            name: "Evento",
+            folder: "78-evento",
+            category: "events",
+            image: "https://via.placeholder.com/300x200?text=Evento"
+        },
+        {
+            id: 80,
+            name: "Layla",
+            folder: "79-layla",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Layla"
+        },
+        {
+            id: 81,
+            name: "Restaurant",
+            folder: "80-restaurant",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Restaurant"
+        },
+        {
+            id: 82,
+            name: "Travellers",
+            folder: "81-travellers",
+            category: "travel",
+            image: "https://via.placeholder.com/300x200?text=Travellers"
+        },
+        {
+            id: 83,
+            name: "Restaurant",
+            folder: "82-restaurant",
+            category: "restaurant",
+            image: "https://via.placeholder.com/300x200?text=Restaurant+2"
+        },
+        {
+            id: 84,
+            name: "Fitness",
+            folder: "83-fitness",
+            category: "sports",
+            image: "https://via.placeholder.com/300x200?text=Fitness"
+        },
+        {
+            id: 85,
+            name: "Creative",
+            folder: "84-creative",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Creative"
+        },
+        {
+            id: 86,
+            name: "Awesome",
+            folder: "85-awesome",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Awesome+2"
+        },
+        {
+            id: 87,
+            name: "Photographer",
+            folder: "86-photographer",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Photographer"
+        },
+        {
+            id: 88,
+            name: "Luxury",
+            folder: "87-luxury",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Luxury"
+        },
+        {
+            id: 89,
+            name: "Darkjoe",
+            folder: "88-darkjoe",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Darkjoe"
+        },
+        {
+            id: 90,
+            name: "Developer",
+            folder: "89-developer",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Developer"
+        },
+        {
+            id: 91,
+            name: "Polo",
+            folder: "90-polo",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Polo"
+        },
+        {
+            id: 92,
+            name: "Renessa",
+            folder: "91-renessa",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Renessa"
+        },
+        {
+            id: 93,
+            name: "Office",
+            folder: "92-office",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Office"
+        },
+        {
+            id: 94,
+            name: "Flusk",
+            folder: "93-flusk",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Flusk"
+        },
+        {
+            id: 95,
+            name: "The Portfolio",
+            folder: "94-the-portfolio",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=The+Portfolio"
+        },
+        {
+            id: 96,
+            name: "Initio",
+            folder: "95-initio",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Initio"
+        },
+        {
+            id: 97,
+            name: "Dolphin",
+            folder: "96-dolphin",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Dolphin"
+        },
+        {
+            id: 98,
+            name: "Soft Tech",
+            folder: "97-soft-tech",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Soft+Tech"
+        },
+        {
+            id: 99,
+            name: "Mind Craft",
+            folder: "98-mind-craft",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Mind+Craft"
+        },
+        {
+            id: 100,
+            name: "Season",
+            folder: "99-season",
+            category: "business",
+            image: "https://via.placeholder.com/300x200?text=Season"
+        },
+        {
+            id: 101,
+            name: "Mobishop",
+            folder: "101-mobishop",
+            category: "e-commerce",
+            image: "https://via.placeholder.com/300x200?text=Mobishop"
+        },
+        {
+            id: 102,
+            name: "Awesome Portfolio",
+            folder: "102-awesome-portfolio",
+            category: "portfolio",
+            image: "https://via.placeholder.com/300x200?text=Awesome+Portfolio"
+        },
+        {
+            id: 103,
+            name: "Grocery Store",
+            folder: "103-grocery-store",
+            category: "e-commerce",
+            image: "https://via.placeholder.com/300x200?text=Grocery+Store"
+        },
+        {
+            id: 104,
+            name: "Sass Landing Page",
+            folder: "104-sass-landing-page",
+            category: "landing",
+            image: "https://via.placeholder.com/300x200?text=Sass+Landing+Page"
+        }
+    ];
+
+
+        // Số templates trên mỗi trang
+        const templatesPerPage = 12;
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let searchTerm = '';
+
+        // Hiển thị templates
+        function displayTemplates(templates, page = 1) {
+            const startIndex = (page - 1) * templatesPerPage;
+            const endIndex = page * templatesPerPage;
+            const paginatedTemplates = templates.slice(startIndex, endIndex);
+            
+            const templatesGrid = document.getElementById('templatesGrid');
+            templatesGrid.innerHTML = '';
+
+            if (templates.length === 0) {
+                templatesGrid.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-search" style="font-size: 3rem; margin-bottom: 20px; opacity: 0.3;"></i>
+                        <p>No templates found matching your search criteria.</p>
+                        <button class="filter-btn" onclick="resetFilters()" style="margin-top: 20px;">Reset Filters</button>
+                    </div>
+                `;
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+
+            paginatedTemplates.forEach(template => {
+                const card = document.createElement('div');
+                card.className = 'template-card';
+                card.innerHTML = `
+                    <div class="template-image">
+                        <img src="${template.image}" alt="${template.name} Template">
+                        <div class="template-overlay">
+                            <a href="https://eokhanhthien.github.io/template/${template.folder}/" class="preview-btn" target="_blank">Live Preview</a>
+                        </div>
+                    </div>
+                    <div class="template-details">
+                        <div class="template-name">${template.name}</div>
+                        <div class="template-category">${template.category.charAt(0).toUpperCase() + template.category.slice(1)}</div>
+                        <div class="template-actions">
+                            <a href="https://eokhanhthien.github.io/template/${template.folder}/" class="demo-btn" target="_blank"><i class="fas fa-eye"></i> Demo</a>
+                            <a href="https://github.com/eokhanhthien/template/raw/master/src/${template.folder}.zip/" class="download-btn" target="_blank"><i class="fas fa-download"></i> Download</a>
+                        </div>
+                    </div>
+                `;
+                templatesGrid.appendChild(card);
+            });
+
+            // Cập nhật phân trang
+            updatePagination(templates.length);
+        }
+
+        // Cập nhật phân trang
+        function updatePagination(totalItems) {
+            const totalPages = Math.ceil(totalItems / templatesPerPage);
+            const paginationElement = document.getElementById('pagination');
+            paginationElement.innerHTML = '';
+
+            if (totalPages <= 1) {
+                return;
+            }
+
+            // Nút Previous
+            const prevButton = document.createElement('button');
+            prevButton.className = 'pagination-btn';
+            prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    applyFilters();
+                }
+            });
+            paginationElement.appendChild(prevButton);
+
+            // Xác định số trang để hiển thị
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, currentPage + 2);
+
+            // Đảm bảo luôn hiển thị 5 trang nếu có thể
+            if (endPage - startPage < 4 && totalPages > 5) {
+                if (startPage === 1) {
+                    endPage = Math.min(5, totalPages);
+                } else if (endPage === totalPages) {
+                    startPage = Math.max(1, totalPages - 4);
+                }
+            }
+
+            // Thêm nút trang đầu nếu cần
+            if (startPage > 1) {
+                const firstPageBtn = document.createElement('button');
+                firstPageBtn.className = 'pagination-btn';
+                firstPageBtn.textContent = '1';
+                firstPageBtn.addEventListener('click', () => {
+                    currentPage = 1;
+                    applyFilters();
+                });
+                paginationElement.appendChild(firstPageBtn);
+
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.margin = '0 5px';
+                    paginationElement.appendChild(ellipsis);
+                }
+            }
+
+            // Các nút số trang
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.className = 'pagination-btn' + (i === currentPage ? ' active' : '');
+                pageButton.textContent = i;
+                pageButton.addEventListener('click', () => {
+                    currentPage = i;
+                    applyFilters();
+                });
+                paginationElement.appendChild(pageButton);
+            }
+
+            // Thêm nút trang cuối nếu cần
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    ellipsis.style.margin = '0 5px';
+                    paginationElement.appendChild(ellipsis);
+                }
+
+                const lastPageBtn = document.createElement('button');
+                lastPageBtn.className = 'pagination-btn';
+                lastPageBtn.textContent = totalPages;
+                lastPageBtn.addEventListener('click', () => {
+                    currentPage = totalPages;
+                    applyFilters();
+                });
+                paginationElement.appendChild(lastPageBtn);
+            }
+
+            // Nút Next
+            const nextButton = document.createElement('button');
+            nextButton.className = 'pagination-btn';
+            nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    applyFilters();
+                }
+            });
+            paginationElement.appendChild(nextButton);
+        }
+
+        // Áp dụng tất cả các bộ lọc
+        function applyFilters() {
+            let filteredTemplates = allTemplates;
+            
+            // Lọc theo danh mục
+            if (currentCategory !== 'all') {
+                filteredTemplates = filteredTemplates.filter(template => template.category === currentCategory);
+            }
+            
+            // Lọc theo từ khóa tìm kiếm
+            if (searchTerm) {
+                filteredTemplates = filteredTemplates.filter(template => {
+                    return template.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           template.category.toLowerCase().includes(searchTerm.toLowerCase());
+                });
+            }
+            
+            displayTemplates(filteredTemplates, currentPage);
+        }
+
+        // Lọc templates theo danh mục
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+            applyFilters();
+            
+            // Cập nhật nút lọc
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === category) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+
+        // Lọc templates dựa trên từ khóa tìm kiếm
+        function filterTemplates() {
+            searchTerm = document.getElementById('searchInput').value;
+            currentPage = 1;
+            applyFilters();
+        }
+
+        // Reset tất cả bộ lọc
+        function resetFilters() {
+            currentCategory = 'all';
+            searchTerm = '';
+            currentPage = 1;
+            document.getElementById('searchInput').value = '';
+            
+            // Cập nhật nút lọc
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.category === 'all') {
+                    btn.classList.add('active');
+                }
+            });
+            
+            applyFilters();
+        }
+
+        // Hiển thị/ẩn nút "back to top"
+        window.addEventListener('scroll', function() {
+            const backToTopBtn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Cuộn lên đầu trang
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Thiết lập sự kiện cho các nút lọc
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.dataset.category;
+                filterByCategory(category);
+            });
+        });
+
+        // Hiển thị tất cả templates khi trang web tải xong
+        window.onload = function() {
+            displayTemplates(allTemplates);
+        };
+    </script>
+</body>
+</html>
